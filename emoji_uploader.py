@@ -1,12 +1,13 @@
 import os
 import requests
 from time import sleep
+import auth
 
 print("running emoji_upload script")
 
 # owari api bot token
-API_BOT_TOKEN = 'xoxb-2544992128-1130397664368-RaCLZkThytNMr1X8m2CcKHex'
-USER_TOKEN = 'xoxs-349713275015-348804301301-1112450258422-7cfa2f09e6784948b217ecabd251500bbd31ae54d7c5f3b7ad64b7e410a22f4b'
+API_BOT_TOKEN = auth.api_bot_token
+USER_TOKEN = auth.USER_TOKEN
 
 # endpoints
 URL_ADD = "https://owari-famiri.slack.com/api/emoji.add"

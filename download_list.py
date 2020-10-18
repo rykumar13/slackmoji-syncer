@@ -1,12 +1,12 @@
 import json
 import os
-
+import auth
 from cafe import get_emoji_list, __location__
 
 print("running download_list script")
 
 # gentrack slack api bot token
-api_bot_token = 'xoxb-2544992128-1130397664368-RaCLZkThytNMr1X8m2CcKHex'
+api_bot_token = auth.api_bot_token
 auth_headers = {'Authorization': 'Bearer ' + api_bot_token}
 
 new_json_raw = get_emoji_list(auth_headers)
@@ -15,7 +15,7 @@ with open(os.path.join(__location__, 'emoji_list_gentrack.json'), 'w') as f:
     f.write(json.dumps(new_json_raw))
 
 # owari slack api bot token
-api_bot_token = 'xoxb-349713275015-1095650744277-6r77LSfWASCRLlb2FIeKGzQY'
+api_bot_token = auth.api_bot_token
 auth_headers = {'Authorization': 'Bearer ' + api_bot_token}
 
 new_json_raw = get_emoji_list(auth_headers)
